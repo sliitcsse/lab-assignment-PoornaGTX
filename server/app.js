@@ -117,6 +117,17 @@ const createProfile = async (ctx) => {
   ctx.body = userDetails;
 };
 
+//get Customer details
+const userRead = async (ctx) => {
+  const customerArray = userDetails.filter((user) => {
+    if (user.type === "customer") {
+      return user;
+    }
+  });
+
+  ctx.body = customerArray;
+};
+
 router.get("/", (ctx) => (ctx.body = "Server Run"));
 
 //ruotes
@@ -125,6 +136,7 @@ router.post("/add", addItem);
 router.put("/updateItem", updateItem);
 router.delete("/delete", deleteItem);
 router.post("/createUser", createProfile);
+router.get("/users", userRead);
 
 app.use(router.routes()).use(router.allowedMethods());
 

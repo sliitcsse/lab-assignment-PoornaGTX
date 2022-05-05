@@ -6,6 +6,9 @@ import TraderIndex from "./pages/TraderIndex";
 import AddItem from "./pages/AddItem";
 import UpdateItem from "./pages/UpdateItem";
 import AddPromotion from "./pages/AddPromotion";
+import ViewPromtions from "./pages/ViewPromtions";
+import Users from "./pages/Users";
+import Inventory from "./pages/Inventory";
 
 const App = () => {
   return (
@@ -23,6 +26,9 @@ const App = () => {
           path="/addPromo/:id/:name/:price/:qty/:promo"
           element={<AddPromotion />}
         />
+        <Route path="/viewPromtions" element={<ViewPromtions />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/inventory" element={<Inventory />} />
       </Routes>
     </BrowserRouter>
   );

@@ -61,6 +61,10 @@ const TraderIndex = () => {
       </button>
       &nbsp;
       <button type="button" className="coloradd">
+        <Link to="/viewPromtions">View Promotions</Link>
+      </button>
+      &nbsp;
+      <button type="button" className="coloradd">
         <Link to="/">Logout</Link>
       </button>
       <br />
