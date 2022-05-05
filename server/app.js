@@ -128,6 +128,53 @@ const userRead = async (ctx) => {
   ctx.body = customerArray;
 };
 
+//add to cart
+const cart = async (ctx) => {
+  const item = ctx.request.body;
+  const itemID = customerCart.find((cartItem) => cartItem.id == item.id);
+
+  if (itemID) {
+    console.log("already exists in cart");
+  } else {
+    const addItem = { ...item, cid: new Date().getTime() };
+    customerCart.push(addItem);
+
+    ctx.body = customerCart;
+  }
+};
+
+//add to wish list
+const wishList = async (ctx) => {
+  const wishitem = ctx.request.body;
+  const wishListID = custmerVishList.find(
+    (wishItem) => wishItem.id == wishitem.id
+  );
+  //check wishlit item allready availble on wishlist
+  if (wishListID) {
+    console.log("already exists in wishlist");
+  } else {
+    const addwishitem = { ...wishitem, wid: new Date().getTime() };
+    custmerVishList.push(addwishitem);
+    ctx.body = custmerVishList;
+  }
+};
+
+//get customer cart details
+const cartRead = async (ctx) => {
+  ctx.body = customerCart;
+};
+
+//get customer Wish List
+const wishListRead = async (ctx) => {
+  ctx.body = custmerVishList;
+};
+
+//delete customer wish list
+const deleteLsit = async (ctx) => {
+  custmerVishList = [];
+  ctx.body = custmerVishList;
+};
+
 router.get("/", (ctx) => (ctx.body = "Server Run"));
 
 //ruotes
@@ -137,6 +184,11 @@ router.put("/updateItem", updateItem);
 router.delete("/delete", deleteItem);
 router.post("/createUser", createProfile);
 router.get("/users", userRead);
+router.post("/CustomerCart", cart);
+router.post("/CustomerWishList", wishList);
+router.get("/getCart", cartRead);
+router.get("/getWishList", wishListRead);
+router.delete("/deleteWishList", deleteLsit);
 
 app.use(router.routes()).use(router.allowedMethods());
 

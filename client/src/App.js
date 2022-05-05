@@ -10,6 +10,8 @@ import ViewPromtions from "./pages/ViewPromtions";
 import Users from "./pages/Users";
 import Inventory from "./pages/Inventory";
 import CustomerIndex from "./pages/CustomerIndex";
+import CustomerCart from "./pages/CustomerCart";
+import CustomerWishList from "./pages/CustomerWishList";
 
 const App = () => {
   return (
@@ -31,6 +33,8 @@ const App = () => {
         <Route path="/users" element={<Users />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/customerHome" element={<CustomerIndex />} />
+        <Route path="/myCart" element={<CustomerCart />} />
+        <Route path="/myWishList" element={<CustomerWishList />} />
       </Routes>
     </BrowserRouter>
   );
