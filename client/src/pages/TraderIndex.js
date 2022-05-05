@@ -82,7 +82,7 @@ const TraderIndex = () => {
             <button onClick={() => removeItem(item)}>Remove</button> &nbsp;
             <button onClick={() => updateItem(id, name, price, qty, promo)}>
               Update
-            </button>{" "}
+            </button>
             &nbsp;
             <button onClick={() => itemPromotion(id, name, price, qty, promo)}>
               Add Promotion

@@ -9,6 +9,7 @@ import AddPromotion from "./pages/AddPromotion";
 import ViewPromtions from "./pages/ViewPromtions";
 import Users from "./pages/Users";
 import Inventory from "./pages/Inventory";
+import CustomerIndex from "./pages/CustomerIndex";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/viewPromtions" element={<ViewPromtions />} />
         <Route path="/users" element={<Users />} />
         <Route path="/inventory" element={<Inventory />} />
+        <Route path="/customerHome" element={<CustomerIndex />} />
       </Routes>
     </BrowserRouter>
   );
